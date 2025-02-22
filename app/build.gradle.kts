@@ -48,6 +48,10 @@ chaquopy {
     }
     defaultConfig {
         buildPython("C:/Users/Priyanshu/AppData/Local/Programs/Python/Python312/python.exe")
+        pip {
+            install("numpy")
+            install("matplotlib")
+        }
     }
 }
 

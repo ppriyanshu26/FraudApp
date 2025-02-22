@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +32,8 @@ public class Analysis extends AppCompatActivity {
     ArrayList<String> appNames = new ArrayList<>();
     String selectedApp = "";
     AppCompatButton appBtn;
-    TextView appTxt, pyFile;
+    TextView appTxt;
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +53,7 @@ public class Analysis extends AppCompatActivity {
         autoTxt = findViewById(R.id.autoTxt);
         appBtn = findViewById(R.id.appBtn);
         appTxt = findViewById(R.id.appTxt);
-        pyFile = findViewById(R.id.pyFile);
+        imageView = findViewById(R.id.imageView);
 
         appNames.add("Clash of Clans");
         appNames.add("CNN");
@@ -89,8 +94,14 @@ public class Analysis extends AppCompatActivity {
                 } else {
                     appTxt.setText("Analysis for " + selectedApp);
                     Python py = Python.getInstance();
-                    PyObject pyAns = py.getModule("add_numbers").callAttr("add_num",10,20);
-                    pyFile.setText(pyAns.toString());
+                    PyObject module = py.getModule("graph"); 
+                    String base64Str = module.callAttr("generate_graph").toString();
+
+                    byte[] imageBytes = Base64.decode(base64Str, Base64.DEFAULT);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+
+                    ImageView imageView = findViewById(R.id.imageView);
+                    imageView.setImageBitmap(bitmap);
                 }
             }
         });
