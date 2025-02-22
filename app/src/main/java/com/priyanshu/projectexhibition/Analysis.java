@@ -16,6 +16,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
+
 import java.util.ArrayList;
 
 public class Analysis extends AppCompatActivity {
@@ -23,7 +28,7 @@ public class Analysis extends AppCompatActivity {
     ArrayList<String> appNames = new ArrayList<>();
     String selectedApp = "";
     AppCompatButton appBtn;
-    TextView appTxt;
+    TextView appTxt, pyFile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +37,18 @@ public class Analysis extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+
+            if (! Python.isStarted()) {
+                Python.start(new AndroidPlatform(getApplicationContext()));
+            }
+
             return insets;
         });
 
         autoTxt = findViewById(R.id.autoTxt);
         appBtn = findViewById(R.id.appBtn);
         appTxt = findViewById(R.id.appTxt);
+        pyFile = findViewById(R.id.pyFile);
 
         appNames.add("Clash of Clans");
         appNames.add("CNN");
@@ -77,9 +88,11 @@ public class Analysis extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Select an app from the list", Toast.LENGTH_SHORT).show();
                 } else {
                     appTxt.setText("Analysis for " + selectedApp);
+                    Python py = Python.getInstance();
+                    PyObject pyAns = py.getModule("add_numbers").callAttr("add_num",10,20);
+                    pyFile.setText(pyAns.toString());
                 }
             }
         });
-
     }
 }
