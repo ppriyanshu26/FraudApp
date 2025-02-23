@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:layout_margin="20dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".Analysis">
 
     <TextView
@@ -16,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Comment Analysis"
         android:textSize="26sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <AutoCompleteTextView
         android:id="@+id/autoTxt"
@@ -32,15 +31,182 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:backgroundTint="#00BCD4"
-        android:text="Analyze" />
+        android:text="Analyze"/>
 
     <TextView
-        android:layout_marginTop="20dp"
+        android:id="@+id/appTxt1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text=""
-        android:textSize="22sp"
-        android:id="@+id/appTxt"/>
+        android:textSize="22sp" />
 
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/row11"
+                android:text=""
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row12"
+                android:text=""
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row13"
+                android:text=""
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row14"
+                android:text=""
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row15"
+                android:text=""
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/row21"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row22"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row23"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row24"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row25"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/row31"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row32"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row33"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row34"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/row35"
+                android:text=""
+                android:padding="8dp"
+                android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/appTxt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="#F00A0A"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/appTxt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textSize="22sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/fraud"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/like"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/satisfaction"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/features"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
