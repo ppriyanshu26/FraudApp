@@ -133,70 +133,70 @@ public class Analysis extends AppCompatActivity {
                         satisfaction.setImageResource(R.drawable.candy_satisfaction_rating);
                         features.setImageResource(R.drawable.candy_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Duolingo")) {
-                        appTxt2.setText("Probability of fraudulent activity: 56.38%");
+                        appTxt2.setText("Probability of fraudulent activity: 16.38%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.duolingo_fraud_concerns);
                         like.setImageResource(R.drawable.duolingo_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.duolingo_satisfaction_rating);
                         features.setImageResource(R.drawable.duolingo_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Facebook")) {
-                        appTxt2.setText("Probability of fraudulent activity: 50.60%");
+                        appTxt2.setText("Probability of fraudulent activity: 10.60%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.facebook_fraud_concerns);
                         like.setImageResource(R.drawable.facebook_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.facebook_satisfaction_rating);
                         features.setImageResource(R.drawable.facebook_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Instagram")) {
-                        appTxt2.setText("Probability of fraudulent activity: 57.62%");
+                        appTxt2.setText("Probability of fraudulent activity: 17.62%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.instagram_fraud_concerns);
                         like.setImageResource(R.drawable.instagram_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.instagram_satisfaction_rating);
                         features.setImageResource(R.drawable.instagram_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Netflix")) {
-                        appTxt2.setText("Probability of fraudulent activity: 54.48%");
+                        appTxt2.setText("Probability of fraudulent activity: 14.48%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.netflix_fraud_concerns);
                         like.setImageResource(R.drawable.netflix_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.netflix_likelihood_to_recommend);
                         features.setImageResource(R.drawable.netflix_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Pinterest")) {
-                        appTxt2.setText("Probability of fraudulent activity: 53.15%");
+                        appTxt2.setText("Probability of fraudulent activity: 13.15%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.pinterest_fraud_concerns);
                         like.setImageResource(R.drawable.pinterest_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.pinterest_likelihood_to_recommend);
                         features.setImageResource(R.drawable.pinterest_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Snapchat")) {
-                        appTxt2.setText("Probability of fraudulent activity: 63.64%");
+                        appTxt2.setText("Probability of fraudulent activity: 23.64%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.snapchat_fraud_concerns);
                         like.setImageResource(R.drawable.snapchat_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.snapchat_satisfaction_rating);
                         features.setImageResource(R.drawable.snapchat_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Spotify")) {
-                        appTxt2.setText("Probability of fraudulent activity: 57.14%");
+                        appTxt2.setText("Probability of fraudulent activity: 17.14%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.spotify_fraud_concerns);
                         like.setImageResource(R.drawable.spotify_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.spotify_satisfaction_rating);
                         features.setImageResource(R.drawable.spotify_top_liked_features);
                     } else if(Objects.equals(selectedApp, "Telegram")) {
-                        appTxt2.setText("Probability of fraudulent activity: 59.86%");
+                        appTxt2.setText("Probability of fraudulent activity: 19.86%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.telegram_fraud_concerns);
                         like.setImageResource(R.drawable.telegram_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.telegram_likelihood_to_recommend);
                         features.setImageResource(R.drawable.telegram_top_liked_features);
                     } else if(Objects.equals(selectedApp, "WhatsApp")) {
-                        appTxt2.setText("Probability of fraudulent activity: 61.42%");
+                        appTxt2.setText("Probability of fraudulent activity: 21.42%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.whatsapp_fraud_concerns);
                         like.setImageResource(R.drawable.whatsapp_likelihood_to_recommend);
                         satisfaction.setImageResource(R.drawable.whatsapp_satisfaction_rating);
                         features.setImageResource(R.drawable.whatsapp_top_liked_features);
                     } else {
-                        appTxt2.setText("Probability of fraudulent activity: 55.30%");
+                        appTxt2.setText("Probability of fraudulent activity: 15.30%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.youtube_fraud_concerns);
                         like.setImageResource(R.drawable.youtube_likelihood_to_recommend);

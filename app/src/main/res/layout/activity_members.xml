@@ -34,14 +34,36 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
+                app:cardBackgroundColor="#62AAF0"
+                android:id="@+id/card1">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Member 1 Reg No\nMember 1 Name\nContributions"
+                    android:text="22BAC10041\nGaurav Singh"
                     android:textSize="22dp"
-                    android:textColor="@color/white"
+                    android:id="@+id/txt1"
+                    android:textColor="@color/black"
+                    android:padding="11dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:id="@+id/card2"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#62AAF0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22BAI10330\nManansinh Sandhaliya"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/txt2"
                     android:padding="11dp"/>
 
             </androidx.cardview.widget.CardView>
@@ -52,14 +74,16 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
+                android:id="@+id/card3"
+                app:cardBackgroundColor="#62AAF0">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Member 2 Reg No\nMember 2 Name\nContributions"
+                    android:text="22BCE10753\nAdarsh Kumar"
                     android:textSize="22dp"
-                    android:textColor="@color/white"
+                    android:id="@+id/txt3"
+                    android:textColor="@color/black"
                     android:padding="11dp"/>
 
             </androidx.cardview.widget.CardView>
@@ -70,14 +94,16 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
+                android:id="@+id/card4"
+                app:cardBackgroundColor="#62AAF0">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Member 3 Reg No\nMember 3 Name\nContributions"
+                    android:text="22BCE10793\nRaj Aryan Sharma"
                     android:textSize="22dp"
-                    android:textColor="@color/white"
+                    android:id="@+id/txt4"
+                    android:textColor="@color/black"
                     android:padding="11dp"/>
 
             </androidx.cardview.widget.CardView>
@@ -88,14 +114,96 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
+                android:id="@+id/card5"
+                app:cardBackgroundColor="#62AAF0">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Member 4 Reg No\nMember 4 Name\nContributions"
+                    android:text="22BCE10966\nYashpreet"
                     android:textSize="22dp"
-                    android:textColor="@color/white"
+                    android:id="@+id/txt5"
+                    android:textColor="@color/black"
+                    android:padding="11dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:id="@+id/card6"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#62AAF0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22BCE11127\nPriyanshu Priyam"
+                    android:textSize="22dp"
+                    android:id="@+id/txt6"
+                    android:textColor="@color/black"
+                    android:padding="11dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:id="@+id/card7"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#62AAF0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22BCE11364\nDivyansh Joshi"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/txt7"
+                    android:padding="11dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:id="@+id/card8"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#62AAF0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22BCE11385\nArjun Dakhane"
+                    android:textSize="22dp"
+                    android:id="@+id/txt8"
+                    android:textColor="@color/black"
+                    android:padding="11dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:id="@+id/card9"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#62AAF0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22BCE11662\nMaaz Mirza"
+                    android:textSize="22dp"
+                    android:id="@+id/txt9"
+                    android:textColor="@color/black"
                     android:padding="11dp"/>
 
             </androidx.cardview.widget.CardView>
@@ -106,104 +214,16 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
+                android:id="@+id/card10"
+                app:cardBackgroundColor="#62AAF0">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Member 5 Reg No\nMember 5 Name\nContributions"
+                    android:text="22BET10011\nTarang Gupta"
                     android:textSize="22dp"
-                    android:textColor="@color/white"
-                    android:padding="11dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Member 6 Reg No\nMember 6 Name\nContributions"
-                    android:textSize="22dp"
-                    android:textColor="@color/white"
-                    android:padding="11dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Member 7 Reg No\nMember 7 Name\nContributions"
-                    android:textSize="22dp"
-                    android:textColor="@color/white"
-                    android:padding="11dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Member 8 Reg No\nMember 8 Name\nContributions"
-                    android:textSize="22dp"
-                    android:textColor="@color/white"
-                    android:padding="11dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Member 9 Reg No\nMember 9 Name\nContributions"
-                    android:textSize="22dp"
-                    android:textColor="@color/white"
-                    android:padding="11dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#29FF00">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Member 10 Reg No\nMember 10 Name\nContributions"
-                    android:textSize="22dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:id="@+id/txt10"
                     android:padding="11dp"/>
 
             </androidx.cardview.widget.CardView>
