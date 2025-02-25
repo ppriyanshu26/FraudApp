@@ -9,7 +9,7 @@ public class RetrofitClient {
 
     public static ApiService getInstance(Context context) {
         if (retrofit == null) {
-            String baseUrl = PreferenceManager.getFullBaseUrl(context); // Use latest saved IP
+            String baseUrl = PreferenceManager.getApiBaseUrl(context); // Get the correct base URL
             retrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -19,6 +19,6 @@ public class RetrofitClient {
     }
 
     public static void resetRetrofit() {
-        retrofit = null; // Reset Retrofit when settings change
+        retrofit = null; // Reset Retrofit instance when settings change
     }
 }

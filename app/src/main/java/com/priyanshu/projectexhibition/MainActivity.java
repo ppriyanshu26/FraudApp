@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Intent iDescription = new Intent(getApplicationContext(), Description.class);
         Intent iMembers = new Intent(getApplicationContext(), Members.class);
         Intent iClickbait = new Intent(getApplicationContext(), Clickbait.class);
+        Intent iSettings = new Intent(getApplicationContext(), SettingsActivity.class);
 
         description.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ipconfig.setOnClickListener(v -> SettingsActivity.open(this));
-
+        ipconfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(iSettings);
+            }
+        });
     }
 }
