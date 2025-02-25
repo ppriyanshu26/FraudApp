@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    AppCompatButton description, comments, clickbait, members;
+    AppCompatButton description, comments, clickbait, members, ipconfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         comments = findViewById(R.id.comments);
         clickbait = findViewById(R.id.clickbait);
         members = findViewById(R.id.members);
+        ipconfig = findViewById(R.id.ipconfig);
 
         Intent iComments = new Intent(getApplicationContext(), Analysis.class);
         Intent iDescription = new Intent(getApplicationContext(), Description.class);
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(iClickbait);
             }
         });
+
+        ipconfig.setOnClickListener(v -> SettingsActivity.open(this));
 
     }
 }
