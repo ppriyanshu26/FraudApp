@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_horizontal">
 
-    <!-- Domain (http or https) -->
+    <!-- Switch to toggle between full URL and domain/IP/port -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/url_mode_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use Full API URL"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Full API URL (Initially Hidden) -->
+    <EditText
+        android:id="@+id/base_url_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter full API URL"
+        android:inputType="textUri"
+        android:visibility="gone"/>
+
+    <!-- Domain -->
     <EditText
         android:id="@+id/domain_edit_text"
         android:layout_width="match_parent"
@@ -37,5 +55,4 @@
         android:layout_height="wrap_content"
         android:text="Save"
         android:layout_marginTop="16dp"/>
-
 </LinearLayout>
