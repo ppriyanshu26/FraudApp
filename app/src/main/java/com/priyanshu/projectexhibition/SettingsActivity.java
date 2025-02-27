@@ -84,7 +84,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
 
             RetrofitClient.resetRetrofit();
-            Toast.makeText(this, "Settings saved!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Address saved!", Toast.LENGTH_SHORT).show();
             finish();
         });
     }
