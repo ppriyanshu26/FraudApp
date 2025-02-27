@@ -126,7 +126,7 @@ public class Analysis extends AppCompatActivity {
                     row35.setText("396");
 
                     if(Objects.equals(selectedApp, "Candy Crush Saga")) {
-                        appTxt2.setText("Probability of fraudulent activity: 61.54%");
+                        appTxt2.setText("Probability of fraudulent activity: 21.54%");
                         appTxt3.setText("Graphs:");
                         fraud.setImageResource(R.drawable.candy_fraud_concerns);
                         like.setImageResource(R.drawable.candy_likelihood_to_recommend);

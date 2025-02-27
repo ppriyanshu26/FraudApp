@@ -18,4 +18,38 @@
         android:textSize="26sp"
         android:textStyle="bold"/>
 
+    <ScrollView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textIsSelectable="true"
+                android:textSize="22sp"
+                android:text=" In the present work, we have extended our efforts by developing a mobile application
+ alongside the existing web application to enhance accessibility for users. Additionally, we
+ created a clickbait analyzer where users can input a statement or headline to assess the
+ likelihood of it being fraudulent, thereby incorporating a fact-checking mechanism. The
+ mobile application and web platform both address the issue of fraudulent applications in
+ the digital marketplace. They utilize machine learning models implemented in Python
+ for sentiment analysis and fraud detection. The mobile application complements the web
+ version, which integrates a database to fetch and analyze user app reviews. For the web
+ application, Django serves as the web framework, MongoDB is utilized for efficient storage
+ and retrieval of app review data, and Python powers the machine learning analysis. The
+ clickbait analyzer uses similar technologies to provide users with reliable tools for assessing
+ credibility. Both platforms prioritize user-friendliness, with interfaces designed using
+ HTML, CSS, JavaScript, and frameworks suited for mobile and web environments...."/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>
