@@ -54,6 +54,16 @@
         android:textSize="22sp"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/permissions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#00D41C"
+        android:text="Permissions"
+        android:textSize="22sp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/members"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

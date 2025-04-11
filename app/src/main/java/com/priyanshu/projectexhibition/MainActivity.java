@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    AppCompatButton description, comments, clickbait, members, ipconfig;
+    AppCompatButton description, comments, clickbait, members, ipconfig, permissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         clickbait = findViewById(R.id.clickbait);
         members = findViewById(R.id.members);
         ipconfig = findViewById(R.id.ipconfig);
+        permissions = findViewById(R.id.permissions);
 
         Intent iComments = new Intent(getApplicationContext(), Analysis.class);
         Intent iDescription = new Intent(getApplicationContext(), Description.class);
         Intent iMembers = new Intent(getApplicationContext(), Members.class);
         Intent iClickbait = new Intent(getApplicationContext(), Clickbait.class);
         Intent iSettings = new Intent(getApplicationContext(), SettingsActivity.class);
+        Intent iPermissions = new Intent(getApplicationContext(), Permissions.class);
 
         description.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(iSettings);
+            }
+        });
+
+        permissions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(iPermissions);
             }
         });
     }
