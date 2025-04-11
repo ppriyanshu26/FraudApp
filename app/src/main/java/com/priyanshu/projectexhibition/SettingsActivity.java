@@ -6,10 +6,17 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 
 public class SettingsActivity extends AppCompatActivity {
+
     private SwitchCompat urlModeSwitch;
     private EditText baseUrlEditText, domainEditText, ipEditText, portEditText;
     private Button saveButton;
@@ -17,7 +24,16 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this); // Enable edge-to-edge layout
+
         setContentView(R.layout.activity_settings);
+
+        // Apply padding for system bars
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         urlModeSwitch = findViewById(R.id.url_mode_switch);
         baseUrlEditText = findViewById(R.id.base_url_edit_text);

@@ -2,5 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="cardName">#0823EF</color>
+    <color name="cardBg">#0823EF</color>
+    <color name="btnBg">#6200EE</color>
+    <color name="btnTxt">#FFFFFFFF</color>
+    <color name="menu">#0DCC09</color>
 </resources>

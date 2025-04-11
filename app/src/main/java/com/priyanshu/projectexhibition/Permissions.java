@@ -9,13 +9,15 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.ArrayAdapter;
-import android.widget.ScrollView;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,11 +34,13 @@ public class Permissions extends AppCompatActivity {
 
     AutoCompleteTextView appSelector;
     TextView permissionsText, titleText;
+    ProgressBar progressBar;
+    Button detectAnomaliesButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this); // ✅ Apply Edge-to-Edge
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_permissions);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -48,6 +52,8 @@ public class Permissions extends AppCompatActivity {
         appSelector = findViewById(R.id.appSelector);
         permissionsText = findViewById(R.id.permissionsText);
         titleText = findViewById(R.id.analysisTitle);
+        progressBar = findViewById(R.id.progressBar);
+        detectAnomaliesButton = findViewById(R.id.detectAnomaliesButton);
 
         List<String> appNames = getAllInstalledAppNames();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, appNames);
@@ -64,6 +70,10 @@ public class Permissions extends AppCompatActivity {
             titleText.setText("Analysis of " + selectedApp);
             String packageName = getPackageNameFromAppName(selectedApp);
             displayGrantedPermissions(packageName);
+        });
+
+        detectAnomaliesButton.setOnClickListener(v -> {
+            new AnomalyDetectionTask().execute();
         });
     }
 
@@ -157,7 +167,6 @@ public class Permissions extends AppCompatActivity {
 
             NetworkStats.Bucket bucket;
 
-            // MOBILE
             NetworkStats mobileStats = statsManager.queryDetailsForUid(
                     ConnectivityManager.TYPE_MOBILE, null, oneWeekAgo, now, uid);
             while (mobileStats.hasNextBucket()) {
@@ -171,7 +180,6 @@ public class Permissions extends AppCompatActivity {
                 hourUsageMap.put(hour, hourUsageMap.getOrDefault(hour, 0L) + bucket.getRxBytes() + bucket.getTxBytes());
             }
 
-            // WIFI
             NetworkStats wifiStats = statsManager.queryDetailsForUid(
                     ConnectivityManager.TYPE_WIFI, null, oneWeekAgo, now, uid);
             while (wifiStats.hasNextBucket()) {
@@ -185,7 +193,6 @@ public class Permissions extends AppCompatActivity {
                 hourUsageMap.put(hour, hourUsageMap.getOrDefault(hour, 0L) + bucket.getRxBytes() + bucket.getTxBytes());
             }
 
-            // PEAK HOUR
             int peakHour = -1;
             long peakBytes = 0;
             for (Map.Entry<Integer, Long> entry : hourUsageMap.entrySet()) {
@@ -211,6 +218,72 @@ public class Permissions extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
             return "\n📶 Data usage info not available.";
+        }
+    }
+
+    private class AnomalyDetectionTask extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            titleText.setText("Analysis Report:");
+            progressBar.setVisibility(View.VISIBLE);
+            permissionsText.setText("🔍 Detecting suspicious apps...");
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            PackageManager pm = getPackageManager();
+            List<ApplicationInfo> apps = pm.getInstalledApplications(0);
+            List<String> suspiciousApps = new ArrayList<>();
+
+            List<String> suspiciousPermissions = Arrays.asList(
+                    "RECORD_AUDIO", "CAMERA", "ACCESS_FINE_LOCATION", "READ_CONTACTS", "READ_SMS"
+            );
+
+            for (ApplicationInfo appInfo : apps) {
+                try {
+                    PackageInfo packageInfo = pm.getPackageInfo(appInfo.packageName, PackageManager.GET_PERMISSIONS);
+                    if (packageInfo.requestedPermissions != null) {
+                        for (int i = 0; i < packageInfo.requestedPermissions.length; i++) {
+                            String perm = packageInfo.requestedPermissions[i];
+                            if ((packageInfo.requestedPermissionsFlags[i] & PackageInfo.REQUESTED_PERMISSION_GRANTED) != 0) {
+                                String shortPerm = perm.substring(perm.lastIndexOf('.') + 1);
+                                if (suspiciousPermissions.contains(shortPerm)) {
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                        String usage = getDataUsageForPackage(appInfo.packageName);
+                                        if (usage.contains("MB") || usage.contains("GB")) {
+                                            String label = pm.getApplicationLabel(appInfo).toString();
+                                            suspiciousApps.add(label + " — " + shortPerm);
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (suspiciousApps.isEmpty()) {
+                return "✅ No suspicious apps detected.";
+            } else {
+                Collections.sort(suspiciousApps);  // 🔥 Sort the list alphabetically
+                StringBuilder sb = new StringBuilder("⚠️ Suspicious Apps:\n");
+                for (String app : suspiciousApps) {
+                    sb.append("• ").append(app).append("\n");
+                }
+                return sb.toString();
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            progressBar.setVisibility(View.GONE);
+            permissionsText.setText(result);
         }
     }
 }

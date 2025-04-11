@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/main"
     android:padding="16dp"
     android:gravity="center_horizontal">
 
@@ -54,5 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
+        android:textColor="@color/btnTxt"
+        android:backgroundTint="@color/btnBg"
         android:layout_marginTop="16dp"/>
 </LinearLayout>

@@ -16,13 +16,23 @@
         android:layout_height="wrap_content"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:text="Clickbait Analyzer"/>
+        android:text="App Permissions"/>
+
+    <Button
+        android:id="@+id/detectAnomaliesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detect Anomalies"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/btnBg"
+        android:textColor="@color/btnTxt"
+        android:padding="10dp" />
 
     <AutoCompleteTextView
         android:id="@+id/appSelector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         android:hint="Select an app" />
 
     <TextView
@@ -35,10 +45,26 @@
         android:textStyle="bold"
         android:paddingBottom="8dp" />
 
-    <TextView
-        android:id="@+id/permissionsText"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textSize="16sp" />
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/permissionsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:padding="8dp" />
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+
 </LinearLayout>

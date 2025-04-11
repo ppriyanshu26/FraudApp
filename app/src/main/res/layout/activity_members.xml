@@ -34,7 +34,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/cardName"
+                app:cardBackgroundColor="@color/cardBg"
                 android:id="@+id/card1">
 
                 <TextView
@@ -55,7 +55,7 @@
                 android:id="@+id/card2"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
                 android:id="@+id/card3"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
                 android:id="@+id/card4"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
                 android:id="@+id/card5"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
                 android:id="@+id/card6"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -155,7 +155,7 @@
                 app:cardCornerRadius="8dp"
                 android:id="@+id/card7"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
                 app:cardCornerRadius="8dp"
                 android:id="@+id/card8"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
                 app:cardCornerRadius="8dp"
                 android:id="@+id/card9"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -215,7 +215,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
                 android:id="@+id/card10"
-                app:cardBackgroundColor="@color/cardName">
+                app:cardBackgroundColor="@color/cardBg">
 
                 <TextView
                     android:layout_width="wrap_content"

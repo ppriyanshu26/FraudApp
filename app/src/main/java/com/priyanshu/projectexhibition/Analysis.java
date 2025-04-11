@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -25,7 +25,7 @@ public class Analysis extends AppCompatActivity {
     AutoCompleteTextView autoTxt;
     ArrayList<String> appNames = new ArrayList<>();
     String selectedApp = "";
-    AppCompatButton appBtn;
+    Button appBtn;
     TextView appTxt1, appTxt2, appTxt3, row11, row12, row13, row14, row15, row21, row22, row23, row24, row25, row31, row32, row33, row34, row35;
     ImageView fraud, like, features, satisfaction;
     @Override
