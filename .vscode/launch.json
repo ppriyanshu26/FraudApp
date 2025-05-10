@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Android Launch",
+            "type": "android",
+            "request": "launch",
+            "appPackage": "com.priyanshu.projectexhibition",
+            "appActivity": "com.priyanshu.projectexhibition.MainActivity",
+            "deviceName": "emulator-5554" // Replace with your device or emulator name
+        }
+    ]
+}
